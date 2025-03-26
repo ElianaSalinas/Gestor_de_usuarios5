@@ -29,29 +29,26 @@ namespace Capa_datos
 
             //PROCEDIMIENTO
         }
-
-        public void Insertar(string nombre, string direccion, string telefono,string edad)
+        public void Insertar(string nombre, string telefono,string edad)
         {
             //PROCEDIMIENTO
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "InsertarUsuarios";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@nombre", nombre);
-            comando.Parameters.AddWithValue("@direccion",direccion);
             comando.Parameters.AddWithValue("@telefono", telefono);
             comando.Parameters.AddWithValue("@edad", edad);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
 
-        public void Editar(int id, string nombre, string direccion, string telefono, string edad)
+        public void Editar(int id, string nombre, string telefono, string edad)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "EditarUsuarios";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@id", id);
             comando.Parameters.AddWithValue("@nombre", nombre);
-            comando.Parameters.AddWithValue("@direccion", direccion);
             comando.Parameters.AddWithValue("@telefono", telefono);
             comando.Parameters.AddWithValue("@edad", edad);
             comando.ExecuteNonQuery();
@@ -60,7 +57,7 @@ namespace Capa_datos
         public void Eliminar(int id)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EliminarUsuarioso";
+            comando.CommandText = "EliminarUsuarios";
             comando.CommandType = CommandType.StoredProcedure;
 
             comando.Parameters.AddWithValue("@idusu", id);

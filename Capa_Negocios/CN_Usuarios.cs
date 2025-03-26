@@ -18,14 +18,14 @@ namespace Capa_Negocios
             return objetoCD.Mostrar();
         }
 
-        public void InsertarUsu(string nombre, string direccion, string telefono, string edad)
+        public void InsertarUsu(string nombre, string telefono, string edad)
         {
-            objetoCD.Insertar(nombre, direccion, telefono, edad);
+            objetoCD.Insertar(nombre, telefono, edad);
         }
 
-        public void EditarUsu(int id, string nombre, string direccion, string telefono, string edad)
+        public void EditarUsu(int id, string nombre, string telefono, string edad)
         {
-            objetoCD.Editar(id, nombre, direccion, telefono, edad);
+            objetoCD.Editar(id, nombre, telefono, edad);
         }
 
         public void EliminarUsu(int id)
